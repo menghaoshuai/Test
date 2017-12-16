@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	<constant name="struts.custom.i18n.resources" value="message" />
+	<constant name="struts.mapper.class" value="cn.yongqing.base.BaseActionMapper" />
+	<constant name="struts.multipart.saveDir" value="/var/www/temp" />
+	<constant name="struts.multipart.maxSize" value="5000000" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	<constant name="struts.objectFactory" value="spring" />
+
+	<package name="default" namespace="/" extends="struts-default">
+
+		<default-action-ref name="index" />
+
+        <global-results>
+           <result name="error">/pages/error.jsp</result>
+           <result name="json">/pages/json.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+	</package>
+
+	<include file="struts_cache.xml" />
+	<include file="struts_backstage.xml" />
+ 	<include file="struts_problem.xml" />
+ 	<include file="struts_soft.xml" />
+ 	<include file="struts_id.xml" />
+ 	<include file="struts_json.xml" />
+ 	<include file="struts_office.xml" />
+ 	<include file="struts_voice.xml" />
+ 	<include file="struts_locations.xml" />
+</struts>

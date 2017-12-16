@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="problem" namespace="/" extends="default">
+	
+	   <interceptors>
+			<interceptor-stack name="excStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="exception">
+					<param name="logEnabled">true</param>
+					<param name="logLevel">error</param>             
+				</interceptor-ref>
+			</interceptor-stack>
+				
+			<interceptor name="scoreInterceptor" class="scoreInterceptor" />
+			<interceptor-stack name="scoreStack">
+				<interceptor-ref name="scoreInterceptor"></interceptor-ref>
+				<interceptor-ref name="excStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="excStack"></default-interceptor-ref>
+		
+		<!-- 消息 -->
+		<action name="problem_*" class="problemAction" method="{1}">
+			<interceptor-ref name="scoreStack" />
+		</action>
+		
+		<!-- 人脸识别 -->
+		<action name="faceRecognition_*" class="faceRecognitionInformationAction" method="{1}">
+			<interceptor-ref name="scoreStack" />
+		</action>
+		
+		<!-- 办事公告 -->
+		<action name="noticeDetail_*" class="noticeDetailAction" method="{1}">
+			<interceptor-ref name="scoreStack" />
+		</action>
+		
+		<!-- 问题分类-->
+		<action name="classify_*" class="problemClassifyAction" method="{1}">
+			<interceptor-ref name="scoreStack" />
+		</action>
+		
+		<!-- 机器打印-->
+		<action name="aiPrint_*" class="aiPrintAction" method="{1}">
+			<interceptor-ref name="scoreStack" />
+		</action>
+		
+		<!-- 机器打印列表-->
+		<action name="aiPrintDetail_*" class="aiPrintDetailAction" method="{1}">
+			<interceptor-ref name="scoreStack" />
+		</action>
+		
+		<!-- 问题分类-->
+		<action name="carClassify_*" class="carClassifyAction" method="{1}">
+			<interceptor-ref name="scoreStack" />
+		</action>
+		
+		<!-- 办事公告 -->
+		<action name="carNoticeDetail_*" class="carNoticeDetailAction" method="{1}">
+			<interceptor-ref name="scoreStack" />
+		</action>
+		
+	</package>
+</struts>

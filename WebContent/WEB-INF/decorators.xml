@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/decorators">
+	<excludes>
+		<url-pattern>^/huiYuan_goLogin\.action[\s\S]*$</url-pattern>
+	</excludes>
+	
+	<decorator name="userinfoGoLogin" page="userinfo/login.jsp">
+		<url-pattern>^/userinfo_initLogin.action*$</url-pattern>
+	</decorator>
+	
+	<decorator name="view_local" page="view_local.jsp">
+		<url-pattern>^/\d{8,}\.[mw]?html$</url-pattern>
+	</decorator>
+	
+	<decorator name="fabuForCategory" page="fabuForCategory.jsp">
+		<url-pattern>^/fabu\.shtml[\s\S]*$</url-pattern>
+		<url-pattern>^/\d{2}x\.shtml[\s\S]*$</url-pattern>
+		<url-pattern>^/fabu(_[\s\S]+)?\.action[\s\S]*$</url-pattern>
+		<url-pattern>^/zhcompany[\s\S]*\.action[\s\S]*$</url-pattern>
+		<url-pattern>^/gerenQzzp[\s\S]*\.action[\s\S]*$</url-pattern>
+	</decorator>
+	
+	<decorator name="huiYuan" page="huiYuan.jsp">
+		<url-pattern>^/huiYuan\.shtml[\s\S]*$</url-pattern>
+		<url-pattern>^/huiYuan[\s\S]*\.action[\s\S]*$</url-pattern>
+		<url-pattern>^/favorite[\s\S]*\.action[\s\S]*$</url-pattern>
+		<url-pattern>^/message[\s\S]*\.action[\s\S]*$</url-pattern>
+		<url-pattern>^/logger_loginList\.action[\s\S]*$</url-pattern>
+	</decorator>
+	
+	<decorator name="safeset" page="safeset.jsp">
+		<url-pattern>^/safeset[\s\S]*\.action[\s\S]*$</url-pattern>
+		<url-pattern>^/company[\s\S]*\.action[\s\S]*$</url-pattern>
+		<url-pattern>^/personal[\s\S]*\.action[\s\S]*$</url-pattern>
+	</decorator>
+
+	<decorator name="jifen" page="huiYuan_jifen.jsp">
+		<url-pattern>^/jifen[\s\S]*\.action[\s\S]*$</url-pattern>
+	</decorator>
+	
+	<decorator name="qzzp" page="huiYuan_qzzp.jsp">
+		<url-pattern>^/hYuanQzzp[\s\S]*\.action[\s\S]*$</url-pattern>
+	</decorator>
+	
+	
+	<decorator name="payment" page="huiYuan_payment.jsp">
+		<url-pattern>^/payment[\s\S]*\.action[\s\S]*$</url-pattern>
+	</decorator>
+	
+	<decorator name="search" page="search.jsp">
+		<url-pattern>^/\d{4}[^x]*\.shtml[\s\S]*$</url-pattern>
+		<url-pattern>^/q$</url-pattern>
+	</decorator>
+	
+	<decorator name="mainSearch" page="mainSearch.jsp">
+		<url-pattern>^/huangye\.shtml[\s\S]*$</url-pattern>
+		<url-pattern>^/service\.shtml[\s\S]*$</url-pattern>
+		<url-pattern>^/friend\.shtml[\s\S]*$</url-pattern>
+		<url-pattern>^/\d{2}\.shtml[\s\S]*$</url-pattern>
+	</decorator>
+	
+	<decorator name="shantie" page="shantie.jsp">
+		<url-pattern>^/shantie[\s\S]*\.action[\s\S]*$</url-pattern>
+	</decorator>
+	
+	<decorator name="net" page="net.jsp">
+		<url-pattern>^/net[\s\S]*\.action[\s\S]*$</url-pattern>
+		<url-pattern>^/net[\s\S]*\.shtml[\s\S]*$</url-pattern>
+	</decorator>
+	
+	<decorator name="about" page="about.jsp">
+	</decorator>
+</decorators>

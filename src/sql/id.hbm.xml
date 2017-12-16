@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false">
+   
+   <!-- ProblemMacth Entity -->
+	<class name="cn.yongqing.id.entity.IDRrcord" table="IDRrcord">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="shenFenZheng" type="string" column="shenFenZheng" />
+		<property name="name" type="string" column="name" />
+		<property name="status" type="byte" column="status" />
+		<property name="updateDate" type="timestamp" column="updateDate" />
+	</class>
+	
+	<!-- UserInfo Entity -->
+	<class name="cn.yongqing.id.entity.UserInfo" table="UserInfo">
+		<id name="code" type="int" column="code">
+			<generator class="identity"/>
+		</id>
+		<property name="name" type="string" column="name" />
+		<property name="sex" type="string" column="sex" />
+		<property name="telphone" type="long" column="telphone" />
+		<property name="password" type="string" column="password" />
+		<property name="address" type="string" column="address" />
+		<property name="email" type="string" column="email" />
+		<property name="signature" type="string" column="signature" />
+		<property name="headImg" type="string" column="headImg" />
+		<property name="createDate" type="timestamp" column="createDate" />
+		<property name="status" type="byte" column="status" />
+		<property name="score" type="int" column="score" />
+		<property name="arriveCount" type="int" column="arriveCount" />
+		<property name="isActive" type="byte" column="isActive" />
+		<property name="source" type="byte" column="source" />
+		<property name="scoreStatus" type="byte" column="scoreStatus" />
+		<property name="pushUserId" type="string" column="pushUserId" />
+		<property name="pushChannelId" type="string" column="pushChannelId" />
+		<property name="pushType" type="byte" column="pushType" />
+		<property name="channel" type="string" column="channel" />
+		<property name="imei" type="string" column="imei" />
+		<property name="dateBirth" type="date" column="dateBirth" />
+	</class>
+	
+</hibernate-mapping>

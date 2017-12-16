@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="voice" namespace="/" extends="default">
+	     <interceptors>
+			<interceptor-stack name="excStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="exception">
+					<param name="logEnabled">true</param>
+					<param name="logLevel">error</param>             
+				</interceptor-ref>
+			</interceptor-stack>
+				
+			<interceptor name="scoreInterceptor" class="scoreInterceptor" />
+			<interceptor-stack name="scoreStack">
+				<interceptor-ref name="scoreInterceptor"></interceptor-ref>
+				<interceptor-ref name="excStack"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="excStack"></default-interceptor-ref>
+
+	<action name="voice_*" class="broadcastAction" method="{1}">
+		<interceptor-ref name="scoreStack" />
+	</action> 
+	
+	</package>
+</struts>

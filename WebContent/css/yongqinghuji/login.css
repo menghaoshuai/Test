@@ -1,0 +1,83 @@
+*{
+	padding:0;
+	margin:0;
+}
+a{
+	text-decoration: none;
+	color:#fff;
+}
+.full{
+	background:url("../../images/yongqinghuji/login-bg.jpg") no-repeat center center;
+	position: relative;
+}
+img{
+	height:11.1%;
+	position:absolute;
+	left:0;
+	right:0;
+	top:12.2%;
+	margin:auto;
+}
+h1{
+	position: absolute;
+	top:25.9%;
+	text-align: center;
+	font-family: MicrosoftYaHei;
+	font-size: 48px;
+	color: #FFFFFF;
+	width:100%;
+}
+.contion{
+	position:absolute;
+	top:42.2%;
+	left:0;
+	right:0;
+	margin:auto;
+	width:375px;
+	height:320px;
+	background:url("../../images/yongqinghuji/form.png") no-repeat 0px 0px;
+	border-radius: 10px;
+}
+[type="text"]{
+	margin-top:35px;
+	background:url("../../images/yongqinghuji/phone.png") no-repeat 20px 18px #fff;
+}
+[type="password"]{
+	background:url("../../images/yongqinghuji/lock.png") no-repeat 20px 18px #fff;
+}
+input{
+	display:block;
+	width:270px;
+	height:50px;
+	line-height:50px;
+	opacity: 1;
+	padding-left:45px;
+	font-family: MicrosoftYaHei;
+	font-size: 16px;
+	color: #999999;
+	margin:20px auto;
+	filter:alpha(opacity=100);
+	border: 1px solid #E5E5E5;
+	border-radius: 5px;
+}
+.login_btn{
+	display:block;
+	width:320px;
+	height:50px;
+	margin:55px auto 0;
+	text-align:center;
+	line-height:50px;
+	background:url("../../images/yongqinghuji/login_btn.png") no-repeat center center;
+	font-size:24px;
+	border-radius: 5px;
+}
+.err_tip_parent{
+	position:relative;
+}
+.err_tip{
+	position: absolute;
+	right:27px;
+	top:0px;
+	color:#17579E;
+	font-szie:16px;
+}

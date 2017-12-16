@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="id" namespace="/" extends="default">
+	    <interceptors>
+			<interceptor name="userInfoInterceptor" class="userInfoInterceptor">
+			    <param name="excludeMethods">login,initLogin</param>
+			</interceptor>
+			<interceptor-stack name="userInfoStack">
+				<interceptor-ref name="userInfoInterceptor" />
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="exception">
+					<param name="logEnabled">true</param>
+					<param name="logLevel">error</param>             
+				</interceptor-ref>
+			</interceptor-stack>
+			<interceptor-stack name="excStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="exception">
+					<param name="logEnabled">true</param>
+					<param name="logLevel">error</param>             
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="excStack"></default-interceptor-ref>
+
+	<action name="id_*" class="idRrcordAction" method="{1}">
+		<result name="input">/pages/yongqinghuji/shenfen_daoru.jsp</result>
+	</action> 
+	
+	<action name="userInfo_*" class="userInfoAction" method="{1}">
+	</action>
+		
+	</package>
+</struts>

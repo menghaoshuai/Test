@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false">
+   
+   <!-- PeoplePolice Entity -->
+	<class name="cn.yongqing.office.entity.PeoplePolice" table="PeoplePolice">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="name" type="string" column="name" />
+		<property name="photo" type="string" column="photo" />
+		<property name="post" type="string" column="post" />
+		<property name="officeCode" type="int" column="officeCode" />
+	</class>
+	
+	<!-- PoliceLikes Entity -->
+	<class name="cn.yongqing.office.entity.PoliceLikes" table="PoliceLikes">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="policeCode" type="int" column="policeCode" />
+		<property name="tagCode" type="int" column="tagCode" />
+		<property name="likedCount" type="int" column="likedCount" />
+	</class>
+	
+	<!-- PoliceOffice Entity -->
+	<class name="cn.yongqing.office.entity.PoliceOffice" table="PoliceOffice">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="name" type="string" column="name" />
+		<property name="mac" type="string" column="mac" />
+		<property name="aeraCode" type="int" column="aeraCode" />
+	</class>
+	
+	<!-- Locations Entity -->
+	<class name="cn.yongqing.office.entity.Locations" table="Locations">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="locationName" type="string" column="locationName" />
+		<property name="longitude" type="double" column="longitude" />
+		<property name="latitude" type="double" column="latitude" />
+		<property name="photo" type="string" column="photo" />
+		<property name="description" type="string" column="description" />
+		<property name="aeraCode" type="int" column="aeraCode" />
+	</class>
+	
+</hibernate-mapping>

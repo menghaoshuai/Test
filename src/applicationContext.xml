@@ -1,0 +1,98 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		   http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd	
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
+       default-autowire="autodetect">
+	
+	<context:annotation-config />
+	<context:component-scan base-package="cn.yongqing"/>
+
+	<!-- dataSource -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://47.95.9.59:3306/greensharing?useUnicode=true&amp;characterEncoding=utf-8" 
+			/> <property name="user" value="greensharing" /> <property name="password" value="bTCr4rr2r4" 
+			/>
+		<property name="maxPoolSize" value="10" />
+		<property name="minPoolSize" value="2" />
+		<property name="initialPoolSize" value="2" />
+		<!--每60秒检查所有连接池中的空闲连接。Default: 0 -->
+		<property name="idleConnectionTestPeriod" value="60" />
+		<property name="maxIdleTime" value="60" />
+		<property name="autoCommitOnClose" value="true" />
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref local="dataSource"/>
+		</property>
+		<property name="mappingResources">
+			<list> 				
+				<value>sql/chace.hbm.xml</value>
+				<value>sql/backstage.hbm.xml</value>
+				<value>sql/problem.hbm.xml</value>
+				<value>sql/id.hbm.xml</value>
+				<value>sql/office.hbm.xml</value>
+				<value>sql/voice.hbm.xml</value>
+			</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">none</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 配置事务管理器bean,使用HibernateTransactionManager事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<!-- 为事务管理器注入sessionFactory" -->
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+		<property name="dataSource">
+			<ref local="dataSource"/>
+		</property>
+	</bean>
+	
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="insert*" propagation="REQUIRED" />
+			<tx:method name="update*" propagation="REQUIRED" />
+			<tx:method name="delete*" propagation="REQUIRED" />
+			<tx:method name="fresh*" propagation="REQUIRED" />
+			<tx:method name="regist*" propagation="REQUIRED" />
+			<tx:method name="operate*" propagation="REQUIRED" />
+			<tx:method name="check*" propagation="REQUIRED" />
+			<tx:method name="login*" propagation="REQUIRED" />
+			<tx:method name="query*" read-only="true" />
+			<tx:method name="search*" read-only="true" />
+			<tx:method name="select*"  />
+			<tx:method name="*" read-only="true" />
+		</tx:attributes>
+	</tx:advice>
+
+	<aop:config proxy-target-class="true">
+		<aop:pointcut id="interceptorPointCuts" expression="execution(* cn.yongqing..*Service.*(..))" />
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="interceptorPointCuts" />
+	</aop:config>
+	
+	<!-- Import Part -->
+	<import resource="applicationContext_cache.xml" />
+	<import resource="applicationContext_backstage.xml" />
+	<import resource="applicationContext_problem.xml" />
+	<import resource="applicationContext_soft.xml" />
+    <import resource="applicationContext_id.xml" />
+    <import resource="applicationContext_json.xml" />
+    <import resource="applicationContext_office.xml" />
+    <import resource="applicationContext_voice.xml" />
+</beans>

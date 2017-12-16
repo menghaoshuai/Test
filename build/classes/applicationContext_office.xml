@@ -1,0 +1,59 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		   http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd	
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
+       default-autowire="autodetect">
+
+
+	<bean id="officeAction" class="cn.yongqing.office.action.PoliceOfficeAction"
+		scope="request">
+		<property name="baseService" ref="officeService" />
+	</bean>
+
+	<bean id="officeService" class="cn.yongqing.office.service.PoliceOfficeService"
+		scope="request">
+		<property name="baseDao" ref="officeDao" />
+	</bean>
+
+	<bean id="officeDao" class="cn.yongqing.office.dao.PoliceOfficeDao"
+		scope="request">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="policeAction" class="cn.yongqing.office.action.PeoplePoliceAction"
+		scope="request">
+		<property name="baseService" ref="policeService" />
+	</bean>
+
+	<bean id="policeService" class="cn.yongqing.office.service.PeoplePoliceService"
+		scope="request">
+		<property name="baseDao" ref="policeDao" />
+	</bean>
+
+	<bean id="policeDao" class="cn.yongqing.office.dao.PeoplePoliceDao"
+		scope="request">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="locationsAction" class="cn.yongqing.locations.action.LocationsAction"
+		scope="request">
+		<property name="baseService" ref="locationsService" />
+	</bean>
+
+	<bean id="locationsService" class="cn.yongqing.locations.service.LocationsService"
+		scope="request">
+		<property name="baseDao" ref="locationsDao" />
+	</bean>
+
+	<bean id="locationsDao" class="cn.yongqing.locations.dao.LocationsDao"
+		scope="request">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+</beans>

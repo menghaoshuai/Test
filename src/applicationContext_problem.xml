@@ -1,0 +1,59 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		   http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd	
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
+	default-autowire="autodetect">
+
+	<!-- 消息Action -->
+	<bean id="problemAction" class="cn.yongqing.problem.action.ProblemAction" scope="request">
+		<property name="baseService" ref="problemService" />
+	</bean>
+	<!-- 消息Service -->
+	<bean id="problemService" class="cn.yongqing.problem.service.ProblemService">
+		<property name="baseDao" ref="problemDao" />
+	</bean>
+	<!-- 消息Dao -->
+	<bean id="problemDao" class="cn.yongqing.problem.dao.ProblemDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- 人脸识别Action -->
+	<bean id="faceRecognitionInformationAction" class="cn.yongqing.problem.action.FaceRecognitionInformationAction" scope="request">
+		<property name="baseService" ref="problemService" />
+	</bean>
+	
+	<!-- 办事公告Action -->
+	<bean id="noticeDetailAction" class="cn.yongqing.problem.action.NoticeDetailAction" scope="request">
+		<property name="baseService" ref="problemService" />
+	</bean>
+	
+	<!-- 问题分类Action -->
+	<bean id="problemClassifyAction" class="cn.yongqing.problem.action.ProblemClassifyAction" scope="request">
+		<property name="baseService" ref="problemService" />
+	</bean>
+	
+	<!-- 机器打印Action -->
+	<bean id="aiPrintAction" class="cn.yongqing.problem.action.AIPrinterAction" scope="request">
+		<property name="baseService" ref="problemService" />
+	</bean>
+	
+	<!-- 机器打印列表Action -->
+	<bean id="aiPrintDetailAction" class="cn.yongqing.problem.action.AIPrintDetailAction" scope="request">
+		<property name="baseService" ref="problemService" />
+	</bean>
+	
+	<!-- 办事公告Action -->
+	<bean id="carClassifyAction" class="cn.yongqing.problem.action.CarProblemClassifyAction" scope="request">
+		<property name="baseService" ref="problemService" />
+	</bean>
+	
+	<!-- 办事公告Action -->
+	<bean id="carNoticeDetailAction" class="cn.yongqing.problem.action.CarNoticeDetailAction" scope="request">
+		<property name="baseService" ref="problemService" />
+	</bean>
+	
+</beans>

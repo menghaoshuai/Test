@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false">
+
+	<!-- ReplyDetail Entity -->
+	<class name="cn.yongqing.problem.entity.ReplyDetail" table="ReplyDetail">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="macthCode" type="int" column="macthCode" />
+		<property name="title" type="string" column="title" />
+		<property name="introduce" type="string" column="introduce" />
+		<property name="hotCount" type="int" column="hotCount" />
+	</class>
+
+	<!-- ReplyDetail Entity -->
+	<class name="cn.yongqing.problem.entity.ProblemRecord" table="ProblemRecord">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="problemContent" type="string" column="problemContent" />
+		<property name="createDate" type="timestamp" column="createDate" />
+	</class>
+	
+	<!-- ProblemCheck Entity -->
+	<class name="cn.yongqing.problem.entity.ProblemCheck" table="ProblemCheck">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="macthCode" type="int" column="macthCode" />
+		<property name="replyCode" type="int" column="replyCode" />
+	</class>
+	
+	<!-- ProblemCheck Entity -->
+	<class name="cn.yongqing.problem.entity.Keywords" table="Keywords">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="kw" type="string" column="kw" />
+	</class>
+	
+	<!-- NoticeDetail Entity -->
+	<class name="cn.yongqing.problem.entity.NoticeDetail" table="NoticeDetail">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="title" type="string" column="title" />
+		<property name="introduce" type="string" column="introduce" />
+		<property name="hotCount" type="int" column="hotCount" />
+		<property name="createDate" type="timestamp" column="createDate" />
+	</class>
+	
+	<!-- ProblemClassify Entity -->
+	<class name="cn.yongqing.problem.entity.ProblemClassify" table="ProblemClassify">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="classifyCode" type="int" column="classifyCode" />
+		<property name="classifyName" type="string" column="classifyName" />
+		<property name="replyCode" type="int" column="replyCode" />
+		<property name="sort" type="int" column="sort" />
+	</class>
+	
+	<!-- AIPrinter Entity -->
+	<class name="cn.yongqing.problem.entity.AIPrinter" table="AIPrinter">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="mac" type="string" column="mac" />
+		<property name="email" type="string" column="email" />
+		<property name="name" type="string" column="name" />
+	</class>
+	
+	<!-- AIPrintDetail Entity -->
+	<class name="cn.yongqing.problem.entity.AIPrintDetail" table="AIPrintDetail">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="printHtml" type="string" column="printHtml" />
+		<property name="printName" type="string" column="printName" />
+		<property name="printPreviews" type="string" column="printPreviews" />
+	</class>
+	
+	<!-- CarProblemClassify Entity -->
+	<class name="cn.yongqing.problem.entity.CarProblemClassify" table="CarProblemClassify">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="classifyCode" type="int" column="classifyCode" />
+		<property name="classifyName" type="string" column="classifyName" />
+		<property name="replyCode" type="int" column="replyCode" />
+		<property name="sort" type="int" column="sort" />
+	</class>
+	
+	<!-- CarReplyDetail Entity -->
+	<class name="cn.yongqing.problem.entity.CarReplyDetail" table="CarReplyDetail">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="macthCode" type="int" column="macthCode" />
+		<property name="title" type="string" column="title" />
+		<property name="introduce" type="string" column="introduce" />
+		<property name="hotCount" type="int" column="hotCount" />
+	</class>
+	
+	<!-- NoticeDetail Entity -->
+	<class name="cn.yongqing.problem.entity.CarNoticeDetail" table="CarNoticeDetail">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="title" type="string" column="title" />
+		<property name="introduce" type="string" column="introduce" />
+		<property name="hotCount" type="int" column="hotCount" />
+		<property name="createDate" type="timestamp" column="createDate" />
+	</class>
+	
+</hibernate-mapping>

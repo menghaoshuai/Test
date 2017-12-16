@@ -1,0 +1,335 @@
+.add {
+	padding: 5px 20px;
+	color: #EA9358;
+	border: 1px solid #EA9358;
+	background: transparent;
+	border-radius: 3px;
+	cursor: pointer;
+	margin-left: 0;
+}
+table th{
+	font-weight:400;
+	text-align: left;
+}
+#index .indexBox {
+	margin-bottom: 0px;
+}
+.tabl button{
+	margin-bottom:20px;
+}
+.m_l {
+	padding-left: 50px;
+}
+/* 弹框设置 */
+.dialog,.dis_none{
+	width:800px;
+	height:335px;
+	background:#fff;
+	display:none;
+	position:fixed;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+	z-index: 101;
+	border-radius:5px;
+}
+.dis_none{
+	width: 350px;
+    height: 180px;
+}
+.dis_none .err_tip{
+	color:red;
+}
+.par{
+	margin: 40px 20px 20px;
+}
+.dis_none input{
+	display:inline-block;
+	width:120px;
+	height:30px;
+	line-height:30px;
+	border:1px solid #ccc;
+	background:#f8f8f8;
+	padding-left:10px;
+	border-radius:5px;
+	color:#666;
+}
+/**/
+table {
+	background: #f8f8f8;
+	/* 	padding:10px 30px 30px;  */
+	font-size: 16px;
+}
+
+hr {
+	height: 1px;
+	border: 0;
+	border-bottom: 1px dotted #cccccc;
+}
+
+td {
+	height: 24px;
+	line-height: 24px;
+}
+
+.wen {
+	color: #438BE6;
+}
+
+button {
+	background: transparent;
+	border: 1px solid #438BE6;
+	padding: 5px 10px;
+	border-radius: 3px;
+	margin-left: 20px;
+	color: #438BE6;
+}
+
+.active1,.active2,.fenlei_sure,.fenlei_q{
+	background: #438BE6;
+	color: #fff;
+}
+.add_fe,.add_fenlei{
+	display:inline-block;
+	width:100px;
+	height:35px;
+	line-height:35px;
+	text-align: center;
+	padding:0;
+	border:none;
+	margin-left:0;
+	border-radius:3px;
+}
+.add_fenlei{
+	margin-left:30px;
+	font-size:14px;
+}
+.search {
+	width: 290px;
+	height: 35px;
+	line-height: 35px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding-left: 5px;
+	margin: 20px 0 30px;
+}
+
+.fenlei {
+	height: 50px;
+	padding-bottom: 10px;
+}
+
+.p_r {
+	position: relative;
+}
+
+.sea {
+	position: absolute;
+	top: 25px;
+    left: 430px;
+}
+
+.w {
+	width: 100px;
+}
+
+.check {
+	width: 19px;
+	height: 19px;
+	background: url("../../images/yongqinghuji/checkbox.gif") no-repeat 0
+		top;
+}
+
+.checked {
+	background-position: 0 bottom;
+}
+span.jqTransformCheckboxWrapper{
+	padding-left:50px;
+}
+.down_time{
+	display: inline-block;
+	width:100px;
+	height:35px;
+	line-height: 35px;
+	background:url("../../images/yongqinghuji/s-r.png") 28px 1px no-repeat;
+}
+.down_1{
+	background-position: 61px 1px;
+}
+/* 智能对话训练 */
+.parent{
+	/* border:1px solid #ccc; */
+	border-radius:3px;
+    background: #f8f8f8;
+}
+.addwenti input{
+	border:1px solid #ccc;
+	border-radius:3px;
+	height:42px;
+	line-height:42px;
+	width:400px;
+}
+.addwenti td{
+	height:60px;
+	line-height:60px;
+}
+.td{
+	width:150px;
+	padding:15px 0;
+}
+.add_child{
+	top:22px!important;
+	border:none!important;
+	color:#438BE6!important;
+}
+[type="text"]:focus{
+	border:1px solid #438be6;
+}
+.addwenti{
+	width:850px!important;
+}
+.addwenti label{
+	width: 150px;
+    display: inline-block;
+    text-align: right;
+}
+.ke-container{
+	margin-top:15px;
+}
+.btn2 span{
+	display:inline-block;
+	width:162px;
+	text-align: center;
+	font-size:16px;
+	height:47px;
+	line-height:47px;
+}
+.con{
+	padding:30px 0px;
+}
+.daan{
+	border:1px solid #ccc;
+	border-radius:5px;
+	width: 100%;
+	height:300px;
+}
+.update{
+	position:relative;
+}
+.file{
+	width:100px;
+	height:30px;
+	line-height:30px;
+	text-align: center;
+	color:#17B0B2;
+	border:1px solid #66C1DA;
+	border-radius:3px;
+	cursor:pointer;
+ 	position:absolute;
+	top:0;
+	left:195px;
+	z-index: 5;
+}
+.update label{
+	font-size:16px;
+	position: relative;
+    top: 5px;
+	padding:0 10px 0 80px;
+}
+.wen1{
+	width:100px;
+	height:30px;
+	line-height:30px;
+	text-align: center;
+	position:relative;
+	z-index: 6;
+	cursor:pointer;
+	filter:alpha(opacity=0); 
+	 -moz-opacity:0; 
+	 -khtml-opacity: 0; 
+	 opacity: 0; 
+}
+/* .daoru p{
+	padding:30px 0;
+} */
+.daoru p,.daoru dl{
+	font-size:16px;
+	line-height:36px;
+	padding-left:80px;
+}
+.daoru a{
+	color:#66C1DA;
+}
+.con{
+	display:none;
+}
+.daoru button{
+	width: 100px;
+    height: 36px;
+	margin:50px 0 0 80px;
+	border:1px solid #66C1DA;
+	color:#66C1DA;
+}
+.addwenti_btn{
+	margin-left:0;
+	border:none;
+	background:#438BE6;
+	color:#fff;
+}
+.add_fe{
+	margin-bottom:50px;
+}
+.active2{
+	right:30px;
+	top:0;
+}
+.file1,.wen2{   
+	width: 38px!important;
+    height: 41px!important;
+    top: 91px;
+    left: 347px;
+    font-size:28px;
+    line-height:41px!important;
+    position:absolute;
+}
+.dui_hua .search{
+	right:130px;
+	top:-20px;
+}
+.dui_hua .images{
+	z-index: 10;
+    top: 6px;
+    right: 142px;
+}
+.sea_p{
+	height:50px;	
+}
+/* 学习问题 */
+.con table{
+	width:100%;
+}
+.biaoqian_seach{
+	border:1px solid #ccc;
+	width:300px;
+	border-radius:3px;
+	padding-left:5px;
+	height:35px;
+	line-height:35px;
+	background:#f8f8f8;
+}
+.seacher_btn{
+	left: 315px;
+    top: 8px;
+}
+.p_o_t{
+	margin:50px 0px 30px;
+}
+/* 问题详情 */
+.add2{
+	border:none;
+	color:#fff;
+	background:#438BE6;
+	margin:30px 20px 50px 0;
+}

@@ -1,0 +1,51 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		   http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd	
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
+	default-autowire="autodetect">
+       
+    <!-- 基础Dao -->
+	<bean id="baseDao" class="cn.yongqing.base.BaseDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- Spring对象取得Locator -->
+	<bean id="springLocator" class="cn.yongqing.base.SpringLocator" factory-method="create" />
+
+	<!-- 缓存Dao -->
+	<bean id="cacheDao" class="cn.yongqing.base.dao.CacheDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- 缓存Service -->
+	<bean id="cacheService" class="cn.yongqing.base.service.CacheService" />
+	
+	
+	<!-- 图片Action -->
+	<bean id="imageAction" class="cn.yongqing.cache.action.ImageAction" scope="request">
+	    
+	</bean>
+	
+	<!-- appAction -->
+	<bean id="appAction" class="cn.yongqing.cache.action.AppAction" scope="request" />
+	<!-- app Service -->
+	<bean id="appService" class="cn.yongqing.cache.service.AppService" />
+	
+	 <!-- 微信Action -->
+	<bean id="jifenAction" class="cn.yongqing.wechat.action.InvitationcodeAction"
+		scope="request">
+		<property name="baseService" ref="jifenService" />
+	</bean>
+	
+	<!-- 微信Service -->
+	<bean id="jifenService" class="cn.yongqing.wechat.service.InvitationcodeService"> 
+		<property name="baseDao" ref="jifenDao" /> </bean>
+	
+	<!-- 微信Dao -->
+	<bean id="jifenDao" class="cn.yongqing.wechat.dao.InvitationcodeDao"/> 
+	 
+</beans>

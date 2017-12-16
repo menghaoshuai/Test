@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false">
+   
+    <!-- ProblemMacth Entity -->
+	<class name="cn.yongqing.problem.entity.ProblemMacth" table="ProblemMacth">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="problemTitle" type="string" column="problemTitle" />
+		<property name="exactMatch" type="string" column="exactMatch" />
+		<property name="fuzzyMatch" type="string" column="fuzzyMatch" />
+		<property name="problemSort" type="int" column="problemSort" />
+	</class>
+	
+	<!-- FaceRecognitionInformation Entity -->
+	<class name="cn.yongqing.problem.entity.FaceRecognitionInformation" table="FaceRecognitionInformation">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="personID" type="string" column="personID" />
+		<property name="name" type="string" column="name" />
+		<property name="positionName" type="string" column="positionName" />
+	</class>
+	
+	<!-- ProblemMacth Entity -->
+	<class name="cn.yongqing.office.entity.PoliceTags" table="PoliceTags">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="name" type="string" column="name" />
+	</class>
+	
+	<!-- CarProblemMacth Entity -->
+	<class name="cn.yongqing.problem.entity.CarProblemMacth" table="CarProblemMacth">
+		<id name="code" type="int" column="code">
+			<generator class="identity" />
+		</id>
+		<property name="problemTitle" type="string" column="problemTitle" />
+		<property name="exactMatch" type="string" column="exactMatch" />
+		<property name="fuzzyMatch" type="string" column="fuzzyMatch" />
+		<property name="problemSort" type="int" column="problemSort" />
+	</class>
+	
+</hibernate-mapping>

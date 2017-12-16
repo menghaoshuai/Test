@@ -1,0 +1,46 @@
+.indexBox ul{
+	margin:0 25px;
+}
+.indexBox ul li{
+	width:20%;
+	height:226px;	
+	float:left;
+	text-align:center;
+	background: #F8F8F8;
+	position:relative;
+}
+.shiparent{
+	height:150px;
+	margin-top:36px;
+}
+.indexBox ul li .border-right{
+	border-right:1px solid #e5e5e5;
+	height:127px;
+	position:absolute;
+	right:0;
+	top:30px;
+}
+.indexBox ul li h4{
+	font-size:24px;
+	color:#242831;
+	margin-top:13px;
+}
+.left5,.right5{
+	width:48%;
+	height:50px;
+	margin-top:16px;
+	float:left;	
+}
+.left5 .echarts-tooltip{
+    height: 20px;
+    line-height: 7px;
+}
+#chart,#main{
+	height:382px;
+	margin-top:0px;
+	background:#f8f8f8;
+}
+.right5{
+	width:50%;
+	float:right;
+}
